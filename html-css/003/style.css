@@ -1,4 +1,18 @@
+/*tag{
+    propriedades: parâmetros
+}
+
+*/
+
+/*seletor universal*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
 html, body{
+    height: 100vh;
+    box-sizing: border-box;
     background-color: black;
     color: white;
     
@@ -18,7 +32,8 @@ header{
     text-align: justify;
 }
 
-strong{
+/*class no css, serve para agrupar vários tipos independente da tag*/
+.texto-destaque{
     color: aqua;
 }
 
@@ -32,7 +47,9 @@ p{
     text-align: justify;
 }
 
-main{
+main.conteiner{
+    display: flex; /*alinha as childs em ordem*/
+    align-items: center; 
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     width: 380px;
