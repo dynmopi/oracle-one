@@ -7,7 +7,10 @@ import java.net.http.HttpResponse;
 import java.io.IOException;
 
 public class ConsumoApi {
+    // separar as classes de acordo com as suas devidas responsabilidades, é uma prática
+    // indispensável em oo
     public String obterDados(String endereco) {
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
