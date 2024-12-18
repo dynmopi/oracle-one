@@ -9,13 +9,13 @@ import br.com.alura.screenmatch.service.ConverteDados;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Principal {
 
     private Scanner leitura = new Scanner(System.in);
     private ConsumoApi consumo = new ConsumoApi();
     private ConverteDados conversor = new ConverteDados();
-
 
 
     private final String ENDERECO = "https://omdbapi.com/?t=";
@@ -53,5 +53,9 @@ public class Principal {
 //        }
         temporada.forEach(t -> t.episodio().forEach(e -> System.out.println(e.titulo())));
         temporada.forEach(System.out::println);
+
+        List<DadosEpisodio> dadosEpisodios = temporada.stream()
+                .flatMap(t -> t.episodio().stream())
+                .collect(Collectors.toList());
     }
 }
